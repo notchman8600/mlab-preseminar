@@ -130,3 +130,5 @@ dmypy.json
 *.jpg
 toyota_image_dataset_v2/
 bmw_image_dataset_v2/
+bmw/
+toyota/
