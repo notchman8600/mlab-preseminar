@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "mlab-preseminar"
+version = "0.1.0"
+description = ""
+authors = ["notchman"]
+license = "GPLv3"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+tensorflow = "^2.8.0"
+panda = "^0.3.1"
+pandas = "^1.4.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
