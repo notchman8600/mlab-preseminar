@@ -25,5 +25,6 @@ Kaggleのデータセットが必ずしも使い物にはならないという�
 
 BMW:
 Error count of BMW's data: 1048.0 9.6306%
+
 TOYOTA:
 Error count of Toyota's data: 4169.0 21.409
