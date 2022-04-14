@@ -1,0 +1,81 @@
+<form method="POST" action="/task_assignments/{{task_assignment_id}}">
+  {% if assign_func_result[1]["url"] %}
+       <input type="hidden" name="callback_url" value="{{assign_func_result[1]["url"]}}" />
+  {% else %}
+      <input type="hidden" name="callback_url" value="{{callback_url}}" />
+  {% endif %} 
+
+  <h5>In the following image, which car do you consider it is ?</h5>
+
+  <div class="container">
+      <div class="row">
+          <div class="col">
+              <img src="{{dataitem[0]}}" width=40% height=auto />
+          </div>
+          <div class="col">
+              <div class="instruction">
+              </div>
+              <style type="text/css">
+                  .toggle-btn {
+                  margin-top: 10px;
+                  border-top: 1px solid rgb(77, 74, 74);
+                  text-align: left;
+                  }
+                  .instruction {
+                  width: 60%;
+                  }
+              </style>
+              <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+              <script type="text/javascript">
+              $.fn.fold = function(config) {
+              var that = $(this);
+              var isFold = false;
+              var btnStr = "see";
+              
+              var content = that.text();
+              var title = "Instruction";
+          
+              that.text(title);
+          
+              var btn = $("<div>" + btnStr + "<div>").click(function(e) {
+                  var target = $(this).prev();
+                  if (isFold) {
+                  target.text(title);
+                  $(this).text("see");
+                  } else {
+                  target.text(content);
+                  $(this).text("close");
+                  }
+                  isFold = !isFold;
+              }).insertAfter(that).addClass('toggle-btn');
+              };
+          
+              $('.instruction').fold();
+              </script>
+              <div>
+                  <div>
+                      <img src="" width=20% height=auto />
+                      <input type="radio" name="result" value=0 id="radio0" required />
+                      <label for="radio0">1:toyota</label>
+                  </div>
+
+                  <div>
+                      <img src="" width=20% height=auto />
+                      <input type="radio" name="result" value=1 id="radio1" />
+                      <label for="radio1">2:bmw</label>
+                  </div>
+
+                  <div>
+                      <img src="" width=20% height=auto />
+                      <input type="radio" name="result" value=2 id="radio2" />
+                      <label for="radio2">3:none</label>
+                  </div>
+
+              </div>
+              <div>
+                  <button type="submit">Submit</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</form>
