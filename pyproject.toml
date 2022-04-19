@@ -10,6 +10,13 @@ python = ">=3.9,<3.10"
 tensorflow = "^2.8.0"
 panda = "^0.3.1"
 pandas = "^1.4.2"
+gym = "^0.23.1"
+numpy = "^1.22.3"
+scipy = "^1.8.0"
+scikit-learn = "^1.0.2"
+matplotlib = "^3.5.1"
+tqdm = "^4.64.0"
+tornado = "^6.1"
 
 [tool.poetry.dev-dependencies]
 
