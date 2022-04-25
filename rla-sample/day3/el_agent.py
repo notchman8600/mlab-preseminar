@@ -11,8 +11,10 @@ class ELAgent():
 
     def policy(self, s, actions):
         if np.random.random() < self.epsilon:
+            # 探索
             return np.random.randint(len(actions))
         else:
+            # 評価値の最大なものを活用
             if s in self.Q and sum(self.Q[s]) != 0:
                 return np.argmax(self.Q[s])
             else:

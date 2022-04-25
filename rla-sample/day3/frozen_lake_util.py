@@ -25,7 +25,7 @@ def show_q_value(Q):
         'FrozenLake-v1',
         desc=None,
         map_name="4x4",
-        is_slippery=True)
+        is_slippery=False)
     nrow = env.unwrapped.nrow
     ncol = env.unwrapped.ncol
     state_size = 3

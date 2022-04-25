@@ -63,7 +63,7 @@ def train():
         'FrozenLake-v1',
         desc=None,
         map_name="4x4",
-        is_slippery=True)
+        is_slippery=False)
     agent.learn(env, episode_count=500)
     show_q_value(agent.Q)
     agent.show_reward_log()
