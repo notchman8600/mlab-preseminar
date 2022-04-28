@@ -4,7 +4,7 @@ from sklearn.datasets import load_boston
 import pandas as pd
 import matplotlib.pyplot as plt
 from tensorflow.python import keras as K
-
+import tensorflow as tf
 
 dataset = load_boston()
 
@@ -15,7 +15,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.33)
 
 model = K.Sequential([
-    K.layers.BatchNormalization(input_shape=(13,)),
+    tf.keras.layers.BatchNormalization(input_shape=(13,)),
     K.layers.Dense(units=13, activation="softplus", kernel_regularizer="l1"),
     K.layers.Dense(units=1)
 ])
