@@ -19,6 +19,8 @@ tqdm = "^4.64.0"
 tornado = "^6.1"
 pygame = "^2.1.2"
 tensorboard = "2.8.0"
+argparse = "^1.4.0"
+gym_ple = "^0.3"
 
 [tool.poetry.dev-dependencies]
 
