@@ -2,6 +2,7 @@ import random
 import argparse
 from collections import deque
 import numpy as np
+import tensorflow as tf
 from tensorflow.python import keras as K
 from PIL import Image
 import gym
@@ -146,7 +147,8 @@ class DeepQNetworkTrainer(Trainer):
         self.loss = 0
 
     def begin_train(self, episode, agent):
-        optimizer = K.optimizers.Adam(lr=self.learning_rate, clipvalue=1.0)
+        optimizer = tf.keras.optimizers.Adam(
+            lr=self.learning_rate, clipvalue=1.0)
         agent.initialize(self.experiences, optimizer)
         self.logger.set_model(agent.model)
         agent.epsilon = self.initial_epsilon
@@ -188,10 +190,10 @@ def main(play, is_test):
 
     if is_test:
         print("Train on test mode")
-        obs = gym.make("CartPole-v1")
+        obs = gym.make("CartPole-v0")
         agent_class = DeepQNetworkAgentTest
     else:
-        env = gym.make("Catcher-v1")
+        env = gym.make("Catcher-v0")
         obs = CatcherObserver(env, 80, 80, 4)
         trainer.learning_rate = 1e-4
 
